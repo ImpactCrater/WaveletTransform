@@ -15,19 +15,19 @@ python3 "path_to_the_main.py" "path_to_the_test1.png"
 ```
 
 ### My Results
-Original image file.
+1. Original image file.
 <div align="center">
 	<img src="https://raw.githubusercontent.com/ImpactCrater/WaveletTransform/master/images/test1.png"/>
 </div>
 </a>
 
-Forward wavelet transformed image.
+1. Forward wavelet transformed image.
 <div align="center">
 	<img src="https://raw.githubusercontent.com/ImpactCrater/WaveletTransform/master/images/testResultForward.png"/>
 </div>
 </a>
 
-Inverse wavelet transformed image.
+1. Inverse wavelet transformed image.
 <div align="center">
 	<img src="https://raw.githubusercontent.com/ImpactCrater/WaveletTransform/master/images/testResultInverse.png"/>
 </div>
