@@ -9,7 +9,7 @@ Test script "main.py" uses OpenCV library.
 ```bash
 sudo python3 -m pip install opencv-python
 ```
-1. Run.
+2. Run.
 ```bash
 python3 "path_to_the_main.py" "path_to_the_test1.png"
 ```
