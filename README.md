@@ -1,5 +1,5 @@
 ## WaveletTransform
-- **Simple wavelet transform and inverse wavelet transform program written in Python.**
+- **Simple Haar wavelet transform and inverse wavelet transform program written in Python.**
 
 ## Steps
 
