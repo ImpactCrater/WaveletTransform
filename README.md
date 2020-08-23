@@ -15,7 +15,7 @@ python3 "path_to_the_main.py" "path_to_the_test1.png" True False 3
 ```
 - **Argument[2] is a boolean value indicating whether to run the forward transform.**
 - **Argument[3] is a boolean value indicating whether to run the inverse transform.**
-- **Argument[4] is the number of times to transform.
+- **Argument[4] is the number of times to transform.**
 
 ### My Results
 - **Original image file.**
