@@ -34,7 +34,7 @@ def ImageProcessing(imagePath, runForward = True, runInverse = False, n = 3):
 
 def main():
   try:
-    ImageProcessing(sys.argv[1], sys.argv[2], sys.argv[3])
+    ImageProcessing(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
   except Exception as e:
     print(e)
 
