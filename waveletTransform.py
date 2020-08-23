@@ -7,6 +7,10 @@ def WaveletTransform(sourceImage, n = 5):
 #   = [[[r, g, b], [r, g, b], [r, g, b]],
 #      [[r, g, b], [r, g, b], [r, g, b]]]
 
+  if sourceImage.dtype == np.uint8:
+    sourceImage = sourceImage.astype(np.uint16)
+    sourceImage *= 257
+
   if not(sourceImage.shape[2]):
     sourceImage = sourceImage[:, :, np.newaxis]
   nChannel = sourceImage.shape[2]
@@ -54,9 +58,12 @@ def WaveletTransform(sourceImage, n = 5):
     sourceImage[:rows, :columns] = resultImage[:rows, :columns]
     rows = rows >> 1
     columns = columns >> 1
-  return resultImage
+  resultImage = np.round((resultImage + 65535) / 2.0)
+  return resultImage.astype(np.uint16)
+
 
 def InverseWaveletTransform(sourceImage, n = 5):
+
   if not(sourceImage.shape[2]):
     sourceImage = sourceImage[:, :, np.newaxis]
   nChannel = sourceImage.shape[2]
@@ -75,6 +82,8 @@ def InverseWaveletTransform(sourceImage, n = 5):
     sourceImage = np.append(sourceImage, endRightArray, axis = 1)
 
   sourceImage = sourceImage.astype(np.float32)
+  sourceImage = sourceImage * 2.0 - 65535.0
+
   rows, columns = sourceImage.shape[:2]
   rows = int(rows / pow(2, n - 1))
   columns = int(columns / pow(2, n - 1))
@@ -106,5 +115,6 @@ def InverseWaveletTransform(sourceImage, n = 5):
     sourceImage[:rows, :columns] = resultImage[:rows, :columns]
     rows = rows << 1
     columns = columns << 1
+    resultImage = resultImage.clip(0,65535)
+  resultImage = resultImage.astype(np.uint16)
   return resultImage
-  
